@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -35,4 +39,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* 20220921 */
+.color-box{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  font-weight: bold;
+  color: white;
+}
+.red{
+  background: red;
+}
+.blue{
+  background: blue;
+}
+.green{
+  background: green;
+}
+.orange{
+  background: orange;
+}
+.skyblue{
+  background: skyblue;
+}
+
+/* 20220922 토글 */
+.normal{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+.dark{
+  background: black;
+  color: white;
 }

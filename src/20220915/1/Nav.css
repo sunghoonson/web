@@ -1,0 +1,11 @@
+.nav-container{
+    /* border: 10px ; */
+    position: relative;
+    /* right: -40%; */
+    width: 100%;
+    box-shadow: 2px 2px 2px 1px gray;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: end;    
+    padding: 1%;
+}

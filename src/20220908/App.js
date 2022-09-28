@@ -56,3 +56,28 @@ class App extends Component {
 }
 
 export default App;
+
+// class App extends Component {
+//     state = {
+//       movies: [
+//         {id: "123450", title: 'Harry Potter', language: "korean", release: '2003-02-22', length:"12345", author: "sunrise", production: "sunrise",divide : "----------------------" }, 
+//         {id: "123451", title: 'Indiana Jhones', language: "english", release: '2009-01-09', length:"12345", author: "sunrise", production: "sunrise",divide : "----------------------" }, 
+//         {id: "123452", title: 'Terminator', language: "japanese", release: '2007-04-11', length:"12345", author: "sunrise", production: "sunrise",divide : "----------------------" },
+//         {id: "123453", title: 'Dracula', language: "chinese", release: '2007-04-13', length:"12345", author: "sunrise", production: "sunrise",divide : "----------------------" },
+//         {id: "123454", title: 'Jurassic Park', language: "germany", release: '2007-05-13', length:"12345", author: "sunrise", production: "sunrise",divide : "----------------------" },
+//         {id: "123455", title: 'Iron man', language: "italian", release: '2012-12-18', length:"12345", author: "sunrise", production: "sunrise",divide : "----------------------" },
+//         {id: "123456", title: 'Spider man', language: "russian", release: '2017-03-07', length:"12345", author: "sunrise", production: "sunrise"}
+//     ]
+//     }
+//     render(){
+//       const { movies } = this.state
+//       return (
+//         <div className='App'>
+//         <MovieList movies={movies}></MovieList>
+//         </div>
+//       )
+//     }
+    
+//   }
+  
+//   export default App;

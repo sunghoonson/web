@@ -1,0 +1,53 @@
+async componentDidMount(){
+        // open api 데이터 가져오기
+        // fetch("https://api.neople.co.kr/df/servers?apikey=1234")
+        // .then(response => response.json()) // JSON 문자열 => 자바스크립트 객체, 배열로 파싱(해석)
+        // .then(data => {
+        //     console.log(data)
+        // }) // then 은 fetch 메서드가 promise 객체를 리턴하기 때문에 사용가능
+        // console.log('ddddd')
+
+
+        const data = await fetchData() 
+        // console.log('after fetch')
+    }
+     fetchData = async () => {
+        const response = await fetch("https://api.neople.co.kr/df/servers?apikey=1234")
+        const data = await response.json()
+        console.log(data) // 실제 객체, 배열 
+    }
+
+
+
+
+    class App extends Component {
+  async componentDidMount(){
+    // open api 데이터 가져오기
+    // fetch("https://api.neople.co.kr/df/servers?apikey=1234")
+    // .then(response => response.json()) // JSON 문자열 => 자바스크립트 객체, 배열로 파싱(해석)
+    // .then(data => {
+    //     console.log(data)
+    // }) // then 은 fetch 메서드가 promise 객체를 리턴하기 때문에 사용가능
+    // console.log('ddddd')
+
+    const data = await this.fetchData() 
+    console.log(data)
+}
+ fetchData = async () => {
+    const response = await fetch("/df/servers?apikey=9NfSzeykB1a9mfaZGye2rNqEwpJMH5Xr")
+    const data = await response.json()
+    console.log(data) // 실제 객체, 배열 
+}
+  render() {
+   
+    return (
+      <div className='App'>
+         njnnnn
+        <br/>
+      
+      </div>
+    );
+  }
+}
+
+export default App;

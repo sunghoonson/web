@@ -20,37 +20,51 @@ import MovieList from './20220908/MovieList';
 // 4. 자식컴포넌트의 render 메서드 재호출
 
 // import logo from './logo.svg';
+import words from './20220922/3/dummyData'
+import Button from './20220915/Button'
 
-import words from './kor_dic_coll.json';
+class App extends Component {
+  state = {
+    //count: ['','','','','','']
+    count: Array.from({ length: 6 }) // 빈 배열 만들 때 쓸 수 있음
+  }
+   increaseCount = () => {
+    let arr = this.state.count
+    for(let i = 0; i<arr.length; i++){
+      arr[i] = this.pickRandomNumber(1,45).toString() + " "
+      for(let j = 0; j<i; j++){ // indexOf, findindex --> 내장 함수로 대체 가능
+        if(arr[j]===arr[i]){
+          arr[i] = this.pickRandomNumber(1,45).toString() + " "          
+        }     
+      }
+      
+    }
+     this.setState({ count: arr})
+   }
+  pickRandomNumber = (min, max) => {
+    return Math.floor( Math.random() * (max-min+1) ) + min
+  } 
 
-const App = () => {
-  const containerStyle = {
-    width: '60%',
-    columns: '2',
-    margin: '50px auto'
+  componentDidMount(){
+    this.countID = setInterval(
+      this.increaseCount
+    , 1000)
   }
-  const itemStyle = {
-    width: '100%',
-    /* height: 300px; */ 
-    marginBottom: '10px',
-    background: 'tan',
-    display: 'inline-block' /* 컬럼 짤림 방지*/
+  componentWillUnmount(){
+    clearInterval(this.countID)
   }
-  return (
-    <div id="container" style={containerStyle}>
-      <h1>사전 검색 서비스</h1>
-      {/* 데이터 => HTML 템플릿 */}
-      {/* map: 데이터 순회 filter: 삭제, 검색 reduce */}
-      {words.map(word => {
-        return (
-          <div class="item" style={itemStyle}>
-              <div class="word"><a href={word.r_link}>{word.r_word}<sup>{word.r_seq}</sup> ({word.r_chi})</a> - {word.r_pos}</div>
-              <p class="description">{word.r_des}</p>
-          </div>
-        )
-      })}
-    </div>
-  )
-}
   
+  render(){
+    
+    const { count } = this.state
+    console.log(count)
+    return (
+      <div className="App">
+        <h1>로또번호 자동 생성기</h1>
+        <h2>{ count }</h2>
+      </div>
+    );
+  }
+}
+
 export default App;
